@@ -1,1 +1,1 @@
-Simple solvers development in OpenFOAM.
+Simple solvers and testcases development in OpenFOAM.
