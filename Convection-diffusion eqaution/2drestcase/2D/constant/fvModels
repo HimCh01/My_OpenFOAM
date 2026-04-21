@@ -1,0 +1,62 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  10
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    format      ascii;
+    class       dictionary;
+    object      fvModels;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+/*
+fixedTemperature
+{
+    type            fixedTemperatureConstraint;
+    selectionMode   all;
+
+    mode            uniform;
+
+    temperature     constant 300; // Set temperature (K)
+}
+*/
+
+
+/*fixedPower
+{
+    type            heatSource;
+   // selectionMode   all;
+    
+	selectionMode   cellSet;
+	cellSet         centerZone;
+
+    Q               100;          // Set power (W)
+    
+}*/
+
+fvModels
+{
+    heatSource
+    {
+        type            scalarExplicitSource;
+        active          true;
+
+        scalarExplicitSourceCoeffs
+        {
+            selectionMode all;   // Apply to the entire domain or specific regions
+            fields
+            {
+                T           // The field to which the source is applied
+                {
+                    source          uniform 100;   // Heat source (e.g., 100 W/m^3)
+                    sourceWeight    uniform 1;     // Weight for explicit term
+                }
+            }
+        }
+    }
+}
+//************************************************************************** //

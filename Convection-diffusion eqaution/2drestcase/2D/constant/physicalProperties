@@ -1,0 +1,27 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  10
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    format      ascii;
+    class       dictionary;
+    location    "constant";
+    object      physicalProperties;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+DT              DT [0 2 -1 0 0 0 0] 0.0005; 
+
+// Density (rho) in kg/m^3
+//rho     rho [1 -3 0 0 0 0 0]  1000;
+
+// Specific heat capacity (cp) in J/(kg·K)
+//cp      cp [0 2 -2 -1 0 0 0]  4186;
+
+// Anisotropic thermal conductivity as a dimensionedVector (kx, ky, kz) in W/(m·K)
+//k   k [1 -1 -3 0 0 0 0]  (5.0 50.0 0);
+// ************************************************************************* //
